@@ -1,0 +1,21 @@
+.myPosts {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    border: none;
+    background-color: rgb(216, 182, 187);
+    border-radius: 0;
+    height: 30px;
+    width: 100px;
+
+}
+
+input {
+    height: 26px;
+    width: 500px;
+    border: 1px rgb(216, 182, 187) solid;
+    border-radius: 0;
+    outline: none;
+}

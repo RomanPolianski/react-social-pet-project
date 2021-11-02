@@ -1,0 +1,31 @@
+.item {
+  color: cadetblue;
+  margin: 20px auto;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+}
+
+.like_img img {
+  width: 15px;
+  height: 15px;
+  border-radius: 1px;
+}
+
+.postimg img {
+  padding-top: 10px;
+  width: 600px;
+  height: 400px;
+}
+
+.name {
+  padding-left: 10px;
+  color: black;
+}
+
+.like {
+  padding-left: 5px;
+}

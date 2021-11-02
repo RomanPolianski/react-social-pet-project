@@ -1,0 +1,36 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+}
+
+.name_pic {
+  margin: 10px auto;
+  padding: 10px 20px;
+
+}
+
+.bio {
+  margin: 20px 0;
+}
+
+.userName {
+  border-bottom: 1px solid cadetblue;;
+}
+
+.value {
+  padding-left: auto;
+}
+
+.background img {
+  height: 100px;
+  width: 1000px;
+}
+
+.avatar img {
+  height: 200px;
+  width: 150px;
+}
+
+.property {
+  color: cadetblue;;
+}

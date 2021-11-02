@@ -1,0 +1,36 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  padding: 10px;
+}
+
+.dialog {
+  display: flex;
+  padding: 10px;
+  border-right: 1px solid rgb(29, 161, 122);
+  flex-direction: row;
+}
+
+.dialog a {
+  text-decoration: none;
+  padding-left: 40px;
+  padding-top: 10px;
+}
+
+.dialog a:visited {
+  color: black;
+}
+
+.dialogsItems .active {
+  color: rgb(29, 161, 122);
+}
+
+.message {
+  padding: 10.5px;
+}
+
+.item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+}

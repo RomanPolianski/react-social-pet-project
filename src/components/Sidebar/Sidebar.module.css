@@ -1,0 +1,27 @@
+.friends {
+  grid-area: s;
+  background-color: rgb(232, 223, 235);
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.item a {
+  text-decoration: none;
+}
+
+.item a:visited {
+  color: black;
+}
+
+.item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  padding-right: 5px;
+}
