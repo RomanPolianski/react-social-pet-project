@@ -13,7 +13,6 @@ import Sidebar from "./components/Sidebar/Sidebar";
 const App = (props) => {
 
   return (
-    <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Nav />
@@ -30,7 +29,6 @@ const App = (props) => {
           <Route path="/settings" component={Settings} />
         </div>
       </div>
-    </BrowserRouter>
   );
 };
 

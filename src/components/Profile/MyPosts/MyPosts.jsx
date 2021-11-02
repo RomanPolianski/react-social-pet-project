@@ -1,18 +1,36 @@
+import React from "react";
 import Post from "../MyPosts/Post/Post";
 import s from "./MyPosts.module.css";
 
-let MyPosts = (props) => {
+const MyPosts = (props) => {
   let postElements = props.posts.map((p) => (
-    <Post name={p.name} avatar={p.avatar} message={p.message} likeCount={p.likeCount} postimg={p.postimg}/>
+    <Post
+      name={p.name}
+      avatar={p.avatar}
+      message={p.message}
+      likeCount={p.likeCount}
+      postimg={p.postimg}
+    />
   ));
+
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    alert(text);
+  };
 
   return (
     <div>
       <h3>My posts</h3>
       <div className={s.myPosts}>
-        <input type="text" placeholder="Whats new?"></input>
+        <input
+          type="text"
+          placeholder="Whats new?"
+          ref={newPostElement}
+        ></input>
         <div>
-          <button>Add post</button>
+          <button onClick={addPost}>Add post</button>
         </div>
       </div>
       <div>
