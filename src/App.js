@@ -19,7 +19,7 @@ const App = (props) => {
         <Sidebar state={props.state.sidebar}/>
         <div className="app-wrapper-content">
           <Route path="/profile">
-            <Profile state={props.state.profilePage} addPost={props.addPost}/>
+            <Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
           </Route>
           <Route exact path="/dialogs">
             <Dialogs state={props.state.messagesPage} />

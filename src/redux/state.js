@@ -34,6 +34,8 @@ let state = {
           "https://i.cbc.ca/1.5645636.1594411598!/fileImage/httpImage/elam-ending-071020.jpg",
       },
     ],
+
+    newPostText: "it-kamasutra",
   },
 
   messagesPage: {
@@ -102,21 +104,27 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
-  debugger;
+
+export let addPost = () => {
   let newPost = {
     id: "4",
     name: "Boris",
     avatar:
       "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile6.jpg",
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likeCount: 212,
     postimg:
       "https://i.cbc.ca/1.5645636.1594411598!/fileImage/httpImage/elam-ending-071020.jpg",
   };
 
   state.profilePage.posts.push(newPost);
-  rerenderEntireTree(state, addPost);
+  state.profilePage.newPostText = '';
+  rerenderEntireTree(state, addPost, updateNewPostText);
+};
+
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state, addPost, updateNewPostText);
 };
 
 export default state;
