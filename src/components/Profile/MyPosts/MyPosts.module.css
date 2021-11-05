@@ -12,6 +12,10 @@ button {
 
 }
 
+button:active {
+    background-color: rgb(168, 149, 149);
+}
+
 input {
     height: 26px;
     width: 500px;
