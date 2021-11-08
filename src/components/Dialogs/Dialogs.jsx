@@ -4,27 +4,37 @@ import Message from "./Message/Message";
 import React from "react";
 
 const Dialogs = (props) => {
-  let dialogElemnts = props.state.dialogs.map((d) => (
+  debugger;
+  let dialogElemnts = props.messagesPage.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} avatar={d.avatar} />
   ));
 
-  let messageElements = props.state.messages.map((m) => (
+  let messageElements = props.messagesPage.messages.map((m) => (
     <Message message={m.message} />
   ));
 
   let searchElementText = React.createRef();
 
-  let addSearch = () => {
+  let addDialog = () => {
+    props.addDialog();
+  };
+
+  let onInputChange = () => {
     let text = searchElementText.current.value;
-    alert(text)
+    props.updateDialogs(text);
   };
 
   return (
     <div className={s.dialogs}>
-      <div className={s.search}>
-        <input type="text" placeholder="Type the word you want to find..." ref={searchElementText}></input>
+      <div className={s.newdialog}>
+        <input
+          type="text"
+          onChange={onInputChange}
+          value={props.messagesPage.newDialogUser}
+          ref={searchElementText}
+        />
         <div>
-          <button onClick={addSearch}>Search</button>
+          <button onClick={addDialog}>Search</button>
         </div>
       </div>
       <div className={s.dialogsItems}>{dialogElemnts}</div>

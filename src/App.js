@@ -13,22 +13,30 @@ const App = (props) => {
   debugger;
 
   return (
-      <div className="app-wrapper">
-        <Header />
-        <Nav />
-        <Sidebar state={props.state.sidebar}/>
-        <div className="app-wrapper-content">
-          <Route path="/profile">
-            <Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>
-          </Route>
-          <Route exact path="/dialogs">
-            <Dialogs state={props.state.messagesPage} />
-          </Route>
-          <Route path="/news" component={News} />
-          <Route path="/music" component={Music} />
-          <Route path="/settings" component={Settings} />
-        </div>
+    <div className="app-wrapper">
+      <Header />
+      <Nav />
+      <Sidebar state={props.state.sidebar} />
+      <div className="app-wrapper-content">
+        <Route path="/profile">
+          <Profile
+            profilePage={props.state.profilePage}
+            addPost={props.addPost}
+            updateNewPostText={props.updateNewPostText}
+          />
+        </Route>
+        <Route exact path="/dialogs">
+          <Dialogs
+            messagesPage={props.state.messagesPage}
+            addDialog={props.addDialog}
+            updateDialogs={props.updateDialogs}
+          />
+        </Route>
+        <Route path="/news" component={News} />
+        <Route path="/music" component={Music} />
+        <Route path="/settings" component={Settings} />
       </div>
+    </div>
   );
 };
 

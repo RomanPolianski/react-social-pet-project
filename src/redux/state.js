@@ -78,6 +78,8 @@ let state = {
       { message: "i dont care" },
       { message: "Sounds niceee?" },
     ],
+
+    newDialogUser: "Type the person you want to chat with",
   },
 
   sidebar: {
@@ -126,5 +128,23 @@ export let updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
   rerenderEntireTree(state, addPost, updateNewPostText);
 };
+
+export let addDialog = () => {
+  let newDialog = {
+    id: "1",
+    name: state.messagesPage.newDialogUser,
+    avatar:
+      "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile1.jpg",
+  };
+
+  state.messagesPage.dialogs.push(newDialog);
+  state.messagesPage.newDialogUser = "";
+  rerenderEntireTree(state, addPost, updateNewPostText, updateDialogs, addDialog);
+}
+
+export let updateDialogs = (newText) => {
+  state.messagesPage.newDialogUser = newText;
+  rerenderEntireTree(state, addPost, updateNewPostText, updateDialogs, addDialog);
+}
 
 export default state;

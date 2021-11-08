@@ -40,7 +40,7 @@
   padding: 10.5px;
 }
 
-.search {
+.newdialog {
   grid-area: search;
   display: flex;
   flex-direction: row;
