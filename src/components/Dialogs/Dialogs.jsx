@@ -4,7 +4,6 @@ import Message from "./Message/Message";
 import React from "react";
 
 const Dialogs = (props) => {
-  debugger;
   let dialogElemnts = props.messagesPage.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} avatar={d.avatar} />
   ));
@@ -16,12 +15,12 @@ const Dialogs = (props) => {
   let searchElementText = React.createRef();
 
   let addDialog = () => {
-    props.addDialog();
+    props.dispatch({type: "ADD-DIALOG"});
   };
 
   let onInputChange = () => {
     let text = searchElementText.current.value;
-    props.updateDialogs(text);
+    props.dispatch({type: "UPDATE-DIALOGS", newText: text});
   };
 
   return (

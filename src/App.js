@@ -10,8 +10,6 @@ import Settings from "./components/Settings/Settings";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 const App = (props) => {
-  debugger;
-
   return (
     <div className="app-wrapper">
       <Header />
@@ -21,15 +19,13 @@ const App = (props) => {
         <Route path="/profile">
           <Profile
             profilePage={props.state.profilePage}
-            addPost={props.addPost}
-            updateNewPostText={props.updateNewPostText}
+            dispatch={props.dispatch}
           />
         </Route>
         <Route exact path="/dialogs">
           <Dialogs
             messagesPage={props.state.messagesPage}
-            addDialog={props.addDialog}
-            updateDialogs={props.updateDialogs}
+            dispatch={props.dispatch}
           />
         </Route>
         <Route path="/news" component={News} />
