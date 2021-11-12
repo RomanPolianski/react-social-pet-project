@@ -1,4 +1,8 @@
 import React from "react";
+import {
+  addPostActionCreator,
+  updateNewPostTextActionCreator,
+} from "../../../redux/profile-reducer";
 import Post from "../MyPosts/Post/Post";
 import s from "./MyPosts.module.css";
 
@@ -14,15 +18,13 @@ const MyPosts = (props) => {
     />
   ));
 
-  let newPostElement = React.createRef();
-
   let addPost = () => {
-    props.dispatch({type: "ADD-POST" });
+    props.dispatch(addPostActionCreator());
   };
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.dispatch({type :"UPDATE-POST-TEXT", newText: text });
+  let onPostChange = (e) => {
+    let text = e.target.value;
+    props.dispatch(updateNewPostTextActionCreator(text));
   };
 
   return (
@@ -30,9 +32,8 @@ const MyPosts = (props) => {
       <h3>My posts</h3>
       <div className={s.myPosts}>
         <input
-        type="text"
+          type="text"
           onChange={onPostChange}
-          ref={newPostElement}
           value={props.profilePage.newPostText}
         />
         <div>
