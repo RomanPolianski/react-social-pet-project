@@ -2,31 +2,25 @@ import "./App.css";
 import Profile from "./components/Profile/Profile.jsx";
 import Header from "./components/Header/Header";
 import Nav from "./components/Navbar/Nav";
-import Dialogs from "./components/Dialogs/Dialogs";
 import { Route } from "react-router";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import Sidebar from "./components/Sidebar/Sidebar";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import SidebarContainer from "./components/Sidebar/SidebarContainer";
 
 const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header />
       <Nav />
-      <Sidebar state={props.state.sidebar} />
+      <SidebarContainer store={props.store} />
       <div className="app-wrapper-content">
         <Route path="/profile">
-          <Profile
-            profilePage={props.state.profilePage}
-            dispatch={props.dispatch}
-          />
+          <Profile store={props.store} />
         </Route>
         <Route exact path="/dialogs">
-          <Dialogs
-            messagesPage={props.state.messagesPage}
-            dispatch={props.dispatch}
-          />
+          <DialogsContainer store={props.store} />
         </Route>
         <Route path="/news" component={News} />
         <Route path="/music" component={Music} />
