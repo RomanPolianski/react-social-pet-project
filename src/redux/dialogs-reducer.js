@@ -9,31 +9,31 @@ let initialState = {
       id: "1",
       name: "Masha",
       avatar:
-        "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile1.jpg",
+        "https://www.assyst.de/cms/upload/sub/digitalisierung/18-F.jpg",
     },
     {
       id: "2",
       name: "Dasha",
       avatar:
-        "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile2.jpg",
+        "https://pbs.twimg.com/media/DtAGYO3W0AAr1v1.jpg",
     },
     {
       id: "3",
       name: "Pasha",
       avatar:
-        "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile4.jpg",
+        "https://www.assyst.de/cms/upload/sub/digitalisierung/15-M.jpg",
     },
     {
       id: "4",
       name: "Sasha",
       avatar:
-        "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile5.jpg",
+        "https://ae01.alicdn.com/kf/HTB1CFGDk5AnBKNjSZFvq6yTKXXaM/Langsdom-BX6-Bluetooth.jpg",
     },
     {
       id: "5",
       name: "Boris",
       avatar:
-        "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile6.jpg",
+        "https://profile-images.xing.com/images/afeb0407378b4a3c6e78c0a799720ff5-5/torben-schwierzke.1024x1024.jpg",
     },
   ],
   messages: [
@@ -44,7 +44,7 @@ let initialState = {
     { message: "Sounds niceee?" },
   ],
 
-  newMessageBody: "hi",
+  newMessageBody: "hello",
   newDialogUser: "Type the person you want to chat with",
 };
 
@@ -55,22 +55,37 @@ const dialogsReducer = (state = initialState, action) => {
         id: "1",
         name: state.newDialogUser,
         avatar:
-          "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile1.jpg",
+          "https://www.assyst.de/cms/upload/sub/digitalisierung/15-M.jpg",
       };
-      state.dialogs.push(newDialog);
-      state.newDialogUser = "";
-      return state;
+
+      return {
+        ...state,
+        newDialogUser: "",
+        dialogs: [...state.dialogs, newDialog],
+      };
+   
     case UPDATE_DIALOGS:
-      state.newDialogUser = action.newText;
-      return state;
+      return {
+        ...state,
+        newDialogUser: action.newText,
+      };
+  
+
     case SEND_MESSAGE:
-      let newMessage = state.messages.newMessageBody;
-      state.messages.push({ message: newMessage });
-      state.messages.newMessage = "";
-      return state;
+
+      return {
+        ...state,
+        newMessageBody: "",
+        messages: [...state.messages, {message: state.newMessageBody}],
+        
+      }
+  
     case UPDATE_MESSAGE_TEXT:
-      state.messages.newMessageBody = action.body;
-      return state;
+      return {
+        ...state,
+        newMessageBody: action.body
+      }
+   
     default:
       return state;
   }

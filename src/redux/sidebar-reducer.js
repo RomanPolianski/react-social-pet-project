@@ -4,19 +4,19 @@ let initialState = {
         name: "Masha",
         id: "1",
         avatar:
-          "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile1.jpg",
+          "https://www.assyst.de/cms/upload/sub/digitalisierung/18-F.jpg",
       },
       {
         name: "Dasha",
         id: "2",
         avatar:
-          "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile2.jpg",
+          "https://pbs.twimg.com/media/DtAGYO3W0AAr1v1.jpg",
       },
       {
         name: "Pasha",
         id: "3",
         avatar:
-          "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile4.jpg",
+          "https://www.assyst.de/cms/upload/sub/digitalisierung/15-M.jpg",
       },
     ],
   };

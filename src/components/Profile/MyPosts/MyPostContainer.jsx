@@ -5,34 +5,6 @@ import {
 } from "../../../redux/profile-reducer";
 import MyPosts from "./MyPosts";
 
-// const MyPostsContainer = () => {
-//   return (
-//     <StoreContext.Consumer>
-//       {(store) => {
-//         let state = store.getState();
-//         let addPost = () => {
-//           store.dispatch(addPostActionCreator());
-//         };
-
-//         let onPostChange = (body) => {
-//           store.dispatch(updateNewPostTextActionCreator(body));
-//         };
-
-//         let postElements = state.profilePage.posts;
-
-//         return (
-//           <MyPosts
-//             addPostActionCreator={addPost}
-//             updateNewPostTextActionCreator={onPostChange}
-//             posts={postElements}
-//             value={state.profilePage.newPostText}
-//           />
-//         );
-//       }}
-//     </StoreContext.Consumer>
-//   );
-// };
-
 let mapStateToProps = (state) => {
   return {
     posts: state.profilePage.posts,
@@ -43,7 +15,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     addPostActionCreator: () => dispatch(addPostActionCreator()),
-    updateNewPostTextActionCreator: () => dispatch(updateNewPostTextActionCreator())
+    updateNewPostTextActionCreator: (text) => dispatch(updateNewPostTextActionCreator(text))
   };
 };
 

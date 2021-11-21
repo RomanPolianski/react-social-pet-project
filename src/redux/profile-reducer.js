@@ -7,7 +7,7 @@ let initialState = {
       id: "1",
       name: "Pasha",
       avatar:
-        "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile4.jpg",
+        "https://www.assyst.de/cms/upload/sub/digitalisierung/15-M.jpg",
       message: "Im doin' so well i cant lie",
       likeCount: 1,
       postimg:
@@ -17,7 +17,7 @@ let initialState = {
       id: "2",
       name: "Sasha",
       avatar:
-        "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile5.jpg",
+        "https://ae01.alicdn.com/kf/HTB1CFGDk5AnBKNjSZFvq6yTKXXaM/Langsdom-BX6-Bluetooth.jpg",
       message: "Why nobody loves me?",
       likeCount: 20,
       postimg:
@@ -27,7 +27,7 @@ let initialState = {
       id: "3",
       name: "Boris",
       avatar:
-        "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile6.jpg",
+        "https://profile-images.xing.com/images/afeb0407378b4a3c6e78c0a799720ff5-5/torben-schwierzke.1024x1024.jpg",
       message: "I dont care im ballin nig!!!",
       likeCount: 212,
       postimg:
@@ -45,19 +45,23 @@ const profileReducer = (state = initialState, action) => {
         id: "4",
         name: "Boris",
         avatar:
-          "http://v.bootstrapmb.com/2017/12/xj70323/images/profile/profile6.jpg",
+        "https://profile-images.xing.com/images/afeb0407378b4a3c6e78c0a799720ff5-5/torben-schwierzke.1024x1024.jpg",
         message: state.newPostText,
         likeCount: 212,
         postimg:
           "https://i.cbc.ca/1.5645636.1594411598!/fileImage/httpImage/elam-ending-071020.jpg",
       };
+      return {
+        ...state,
+        newPostText: "",
+        posts: [ ...state.posts, newPost ],
+      };
 
-      state.posts.push(newPost);
-      state.newPostText = "";
-      return state;
     case UPDATE_POST_TEXT:
-      state.newPostText = action.newText;
-      return state;
+      return {
+        ...state,
+        newPostText: action.newText,
+      };
     default:
       return state;
   }

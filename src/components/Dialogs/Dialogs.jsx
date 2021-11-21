@@ -5,7 +5,6 @@ import React from "react";
 
 
 const Dialogs = (props) => {
-  debugger;
   let dialogElements = props.dialogElements.map((d) => (
     <DialogItem name={d.name} id={d.id} avatar={d.avatar} />
   ));
