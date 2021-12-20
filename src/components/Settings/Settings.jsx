@@ -1,3 +1,12 @@
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+import React from "react";
+
+class SettingsContainer extends React.Component {
+    render(){
+        return <Settings {...this.props} />
+    }
+}
+
 const Settings = (props) => {
     return(
         <div>
@@ -6,4 +15,6 @@ const Settings = (props) => {
     )
 }
 
-export default Settings;
+let withAuthSettings = withAuthRedirect(SettingsContainer)
+
+export default withAuthSettings;

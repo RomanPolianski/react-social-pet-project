@@ -4,10 +4,9 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./MyPosts/MyPostContainer";
 
 let Profile = (props) => {
-  debugger;
   return (
     <div className={s.content}>
-      <ProfileInfo />
+      <ProfileInfo profile={props.profile} profileStatus={props.profileStatus} authId={props.authId} updateProfileStatus={props.updateProfileStatus}/>
       <MyPostsContainer store={props.store} />
     </div>
   );
