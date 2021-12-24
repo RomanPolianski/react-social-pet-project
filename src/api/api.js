@@ -24,7 +24,7 @@ export const profileAPI = {
   },
 
   updateProfileStatus(status) {
-    return instance.put(`/profile/status`,  {status});
+    return instance.put(`/profile/status`, { status });
   },
 };
 
@@ -42,4 +42,12 @@ export const authAPI = {
   getAuthUserData() {
     return instance.get(`auth/me`);
   },
+
+  sendLoginRequest(formData) {
+    return instance.post(`auth/login`, { ...formData });
+  },
+
+  sendLogOutRequest(){
+    return instance.delete(`auth/login`)
+  }
 };
