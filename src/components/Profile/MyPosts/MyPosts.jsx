@@ -1,4 +1,5 @@
 import React from "react";
+import {Field, reduxForm } from "redux-form";
 import Post from "../MyPosts/Post/Post";
 import s from "./MyPosts.module.css";
 
@@ -13,28 +14,14 @@ const MyPosts = (props) => {
     />
   ));
 
-  let addPost = () => {
-    props.addPostActionCreator();
-  };
-
-  let onPostChange = (e) => {
-    let text = e.target.value;
-    props.updateNewPostTextActionCreator(text);
-  };
+  let onSubmit = (formData) => {
+    props.addPostActionCreator(formData.post)
+  }
 
   return (
     <div>
       <h3>My posts</h3>
-      <div className={s.myPosts}>
-        <input
-          type="text"
-          onChange={onPostChange}
-          value={props.value}
-        />
-        <div>
-          <button onClick={addPost}>Add post</button>
-        </div>
-      </div>
+      <MyPostsFormRedux onSubmit={onSubmit} props={props}/>
       <div>
         <h4>New Posts</h4>
       </div>
@@ -44,5 +31,25 @@ const MyPosts = (props) => {
     </div>
   );
 };
+
+const MyPostForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit}>
+      <div className={s.myPosts}>
+        <Field
+          type={"text"}
+          component={"input"}
+          name={"post"}
+        />
+        <div>
+          <button>Add post</button>
+        </div>
+      </div>
+    </form>
+  );
+};
+
+const MyPostsFormRedux = reduxForm({ form: "myPost" })(MyPostForm);
+
 
 export default MyPosts;

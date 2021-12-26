@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
 import { sendLoginData } from "../../redux/auth-reducer";
+import s from "./Login.module.css"; 
 
 const Login = (props) => {
   let onSubmit = (formData) => {
@@ -19,10 +20,10 @@ const LoginForm = (props) => {
   return (
     <>
       <form onSubmit={props.handleSubmit}>
-        <div>
+        <div className={s.field}>
           <Field placeholder={"Login"} name={"email"} component={"input"} />
         </div>
-        <div>
+        <div className={s.field}>
           <Field
             placeholder={"Password"}
             name={"password"}
@@ -30,11 +31,11 @@ const LoginForm = (props) => {
             type={"password"}
           />
         </div>
-        <div>
+        <div className={s.field}>
           Remember me
           <Field type={"checkbox"} name={"rememberMe"} component={"input"} />
         </div>
-        <div>
+        <div className={s.field}>
           <button>Login</button>
         </div>
       </form>

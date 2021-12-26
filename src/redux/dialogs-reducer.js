@@ -44,8 +44,6 @@ let initialState = {
     { message: "Sounds niceee?" },
   ],
 
-  newMessageBody: "hello",
-  newDialogUser: "Type the person you want to chat with",
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -53,14 +51,13 @@ const dialogsReducer = (state = initialState, action) => {
     case ADD_DIALOG:
       let newDialog = {
         id: "1",
-        name: state.newDialogUser,
+        name: action.user,
         avatar:
           "https://www.assyst.de/cms/upload/sub/digitalisierung/15-M.jpg",
       };
 
       return {
         ...state,
-        newDialogUser: "",
         dialogs: [...state.dialogs, newDialog],
       };
    
@@ -76,37 +73,29 @@ const dialogsReducer = (state = initialState, action) => {
       return {
         ...state,
         newMessageBody: "",
-        messages: [...state.messages, {message: state.newMessageBody}],
+        messages: [...state.messages, {message: action.message}],
         
       }
   
-    case UPDATE_MESSAGE_TEXT:
-      return {
-        ...state,
-        newMessageBody: action.body
-      }
-   
+
     default:
       return state;
   }
 };
 
-export const sendMessageCreator = () => {
+export const sendMessage = (message) => {
+  debugger;
   return {
     type: SEND_MESSAGE,
+    message,
   };
 };
 
-export const updateMessageBodyCreator = (body) => {
-  return {
-    type: UPDATE_MESSAGE_TEXT,
-    body: body,
-  };
-};
-
-export const addDialogActionCreator = () => {
+export const addDialog = (user) => {
+  debugger;
   return {
     type: ADD_DIALOG,
+    user,
   };
 };
 

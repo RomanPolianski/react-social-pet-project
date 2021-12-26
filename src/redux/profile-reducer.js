@@ -1,7 +1,6 @@
 import { profileAPI, usersAPI } from "../api/api";
 
 const ADD_POST = "ADD-POST";
-const UPDATE_POST_TEXT = "UPDATE-POST-TEXT";
 const SET_USERS_PROFILE = "SET_USERS_PROFILE";
 const SET_USER_STATUS = "SET_USER_STATUS";
 
@@ -38,7 +37,6 @@ let initialState = {
     },
   ],
 
-  newPostText: "it-kamasutra",
   profile: null,
 };
 
@@ -50,21 +48,14 @@ const profileReducer = (state = initialState, action) => {
         name: "Boris",
         avatar:
           "https://profile-images.xing.com/images/afeb0407378b4a3c6e78c0a799720ff5-5/torben-schwierzke.1024x1024.jpg",
-        message: state.newPostText,
+        message: action.text,
         likeCount: 212,
         postimg:
           "https://i.cbc.ca/1.5645636.1594411598!/fileImage/httpImage/elam-ending-071020.jpg",
       };
       return {
         ...state,
-        newPostText: "",
         posts: [...state.posts, newPost],
-      };
-
-    case UPDATE_POST_TEXT:
-      return {
-        ...state,
-        newPostText: action.newText,
       };
 
     case SET_USERS_PROFILE:
@@ -84,16 +75,10 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export const addPostActionCreator = () => {
+export const addPostActionCreator = (text) => {
   return {
     type: ADD_POST,
-  };
-};
-
-export const updateNewPostTextActionCreator = (text) => {
-  return {
-    type: UPDATE_POST_TEXT,
-    newText: text,
+    text
   };
 };
 

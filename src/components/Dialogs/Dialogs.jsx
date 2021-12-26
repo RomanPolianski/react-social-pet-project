@@ -2,7 +2,10 @@ import DialogItem from "./DialogItem/DialogItem";
 import s from "./Dialogs.module.css";
 import Message from "./Message/Message";
 import React from "react";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { Field, reduxForm } from "redux-form";
+import { maxLength, requiredField } from "../../utils/validators/validator";
+import { Input } from "../common/FormsControls/FormsControl";
+
 
 
 const Dialogs = (props) => {
@@ -14,50 +17,51 @@ const Dialogs = (props) => {
     <Message message={m.message} />
   ));
 
-  let addDialog = () => {
-    props.addDialogActionCreator();
+  let onSubmitDialog = (formData) => {
+    props.addDialog(formData.newDialog);
   };
 
-  let onInputChange = (e) => {
-    let text = e.target.value;
-    props.updateDialogsActionCreator(text);
-  };
-
-  let sendMessage = () => {
-    props.sendMessageCreator();
-  };
-
-  let onMessageInputChange = (e) => {
-    let body = e.target.value;
-    props.updateMessageBodyCreator(body);
+  let onSubmitMessage = (formData) => {
+    props.sendMessage(formData.newDialog);
   };
 
   return (
     <div className={s.dialogs}>
-      <div className={s.newdialog}>
-        <input
-          type="text"
-          onChange={onInputChange}
-          value={props.valueSearch}
-        />
-        <div>
-          <button onClick={addDialog}>Search</button>
-        </div>
-      </div>
+      <NewDialogFormRedux onSubmit={onSubmitDialog} />
       <div className={s.dialogsItems}>{dialogElements}</div>
       <div className={s.messages}>{messageElements}</div>
-      <div className={s.newMessage}>
-        <input
-          type="text"
-          onChange={onMessageInputChange}
-          value={props.valueMessage}
-        />
-      </div>
-      <div>
-        <button onClick={sendMessage}>Send</button>
-      </div>
+      <NewMessageFormRedux onSubmit={onSubmitMessage} />
     </div>
   );
 };
+let MaxLengthCreator = maxLength(10);
+const NewDialog = (props) => {
+  return (
+    <div className={s.newdialog}>
+      <form onSubmit={props.handleSubmit}>
+        <Field type="text" component={Input} name={"newDialog"} validate={[requiredField, MaxLengthCreator]}/>
+        <div>
+          <button>Search</button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+const NewMessage = (props) => {
+  return (
+    <div className={s.newMessage}>
+      <form onSubmit={props.handleSubmit}>
+        <Field type="text" name={"newDialog"} component={"input"} />
+        <div>
+          <button>Send</button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+const NewDialogFormRedux = reduxForm({ form: "newDialog" })(NewDialog);
+const NewMessageFormRedux = reduxForm({ form: "newMessage" })(NewMessage);
 
 export default Dialogs;

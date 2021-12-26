@@ -60,8 +60,6 @@ let Users = (props) => {
               <span className={s.name}>{u.name}</span>
             </div>
             <div>{u.status}</div>
-            <div>{"u.location.country"}</div>
-            <div>{"u.location.city"}</div>
           </div>
         </div>
       ))}
