@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-social-pet-project/static/css/main.567ac940.chunk.css",
-    "main.js": "/react-social-pet-project/static/js/main.22680830.chunk.js",
-    "main.js.map": "/react-social-pet-project/static/js/main.22680830.chunk.js.map",
+    "main.js": "/react-social-pet-project/static/js/main.fc56a5ec.chunk.js",
+    "main.js.map": "/react-social-pet-project/static/js/main.fc56a5ec.chunk.js.map",
     "runtime-main.js": "/react-social-pet-project/static/js/runtime-main.0c628c5f.js",
     "runtime-main.js.map": "/react-social-pet-project/static/js/runtime-main.0c628c5f.js.map",
     "static/js/2.2cc38b8e.chunk.js": "/react-social-pet-project/static/js/2.2cc38b8e.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.0c628c5f.js",
     "static/js/2.2cc38b8e.chunk.js",
     "static/css/main.567ac940.chunk.css",
-    "static/js/main.22680830.chunk.js"
+    "static/js/main.fc56a5ec.chunk.js"
   ]
 }
