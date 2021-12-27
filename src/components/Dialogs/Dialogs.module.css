@@ -50,3 +50,7 @@
   height: 40px;
   border-radius: 30px;
 }
+
+form {
+  display: flex;
+}

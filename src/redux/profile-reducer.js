@@ -1,4 +1,5 @@
 import { profileAPI, usersAPI } from "../api/api";
+import defaultAva from "../assets/images/default_user_avatar.png"
 
 const ADD_POST = "ADD-POST";
 const SET_USERS_PROFILE = "SET_USERS_PROFILE";
@@ -45,17 +46,16 @@ const profileReducer = (state = initialState, action) => {
     case ADD_POST:
       let newPost = {
         id: "4",
-        name: "Boris",
-        avatar:
-          "https://profile-images.xing.com/images/afeb0407378b4a3c6e78c0a799720ff5-5/torben-schwierzke.1024x1024.jpg",
+        name: action.login,
+        avatar: defaultAva,
         message: action.text,
-        likeCount: 212,
+        likeCount: 0,
         postimg:
           "https://i.cbc.ca/1.5645636.1594411598!/fileImage/httpImage/elam-ending-071020.jpg",
       };
       return {
         ...state,
-        posts: [...state.posts, newPost],
+        posts: [newPost, ...state.posts],
       };
 
     case SET_USERS_PROFILE:
@@ -75,10 +75,11 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export const addPostActionCreator = (text) => {
+export const addPostActionCreator = (text, login) => {
   return {
     type: ADD_POST,
-    text
+    text,
+    login
   };
 };
 

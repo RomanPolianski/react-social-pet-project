@@ -12,6 +12,7 @@ const Login = (props) => {
     <>
       <h1>Login</h1>
       <LoginFormRedux onSubmit={onSubmit} />
+      <p>Use to demo <b>login:</b> free@samuraijs.com <b>password:</b> free</p>
     </>
   );
 };

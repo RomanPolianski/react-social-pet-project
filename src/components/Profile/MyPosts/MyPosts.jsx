@@ -17,7 +17,7 @@ const MyPosts = (props) => {
   ));
 
   let onSubmit = (formData) => {
-    props.addPostActionCreator(formData.post);
+    props.addPostActionCreator(formData.post, props.login);
   };
 
   return (
