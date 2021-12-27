@@ -1,5 +1,7 @@
 import React from "react";
-import {Field, reduxForm } from "redux-form";
+import { Field, reduxForm } from "redux-form";
+import { maxLength, requiredField } from "../../../utils/validators/validator";
+import { Input } from "../../common/FormsControls/FormsControl";
 import Post from "../MyPosts/Post/Post";
 import s from "./MyPosts.module.css";
 
@@ -15,13 +17,13 @@ const MyPosts = (props) => {
   ));
 
   let onSubmit = (formData) => {
-    props.addPostActionCreator(formData.post)
-  }
+    props.addPostActionCreator(formData.post);
+  };
 
   return (
     <div>
       <h3>My posts</h3>
-      <MyPostsFormRedux onSubmit={onSubmit} props={props}/>
+      <MyPostsFormRedux onSubmit={onSubmit} props={props} />
       <div>
         <h4>New Posts</h4>
       </div>
@@ -31,15 +33,16 @@ const MyPosts = (props) => {
     </div>
   );
 };
-
+let MaxLengthCreator = maxLength(20);
 const MyPostForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div className={s.myPosts}>
         <Field
           type={"text"}
-          component={"input"}
+          component={Input}
           name={"post"}
+          validate={[requiredField, MaxLengthCreator]}
         />
         <div>
           <button>Add post</button>
@@ -50,6 +53,5 @@ const MyPostForm = (props) => {
 };
 
 const MyPostsFormRedux = reduxForm({ form: "myPost" })(MyPostForm);
-
 
 export default MyPosts;

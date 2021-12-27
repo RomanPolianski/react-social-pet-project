@@ -34,7 +34,7 @@ const Dialogs = (props) => {
     </div>
   );
 };
-let MaxLengthCreator = maxLength(10);
+let MaxLengthCreator = maxLength(20);
 const NewDialog = (props) => {
   return (
     <div className={s.newdialog}>
@@ -52,7 +52,7 @@ const NewMessage = (props) => {
   return (
     <div className={s.newMessage}>
       <form onSubmit={props.handleSubmit}>
-        <Field type="text" name={"newDialog"} component={"input"} />
+        <Field type="text" name={"newDialog"} component={Input} validate={[requiredField, MaxLengthCreator]}/>
         <div>
           <button>Send</button>
         </div>
