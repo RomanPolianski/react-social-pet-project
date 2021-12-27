@@ -51,6 +51,13 @@
   border-radius: 30px;
 }
 
-form {
+.newMessage form {
+  display: flex;
+}
+
+.newMessage form {
+  display: flex;
+}
+.newdialog form {
   display: flex;
 }
