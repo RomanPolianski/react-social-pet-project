@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/react-social-pet-project/static/css/main.87073279.chunk.css",
-    "main.js": "/react-social-pet-project/static/js/main.d9fe13e3.chunk.js",
-    "main.js.map": "/react-social-pet-project/static/js/main.d9fe13e3.chunk.js.map",
-    "runtime-main.js": "/react-social-pet-project/static/js/runtime-main.0c628c5f.js",
-    "runtime-main.js.map": "/react-social-pet-project/static/js/runtime-main.0c628c5f.js.map",
-    "static/js/2.dfa13252.chunk.js": "/react-social-pet-project/static/js/2.dfa13252.chunk.js",
-    "static/js/2.dfa13252.chunk.js.map": "/react-social-pet-project/static/js/2.dfa13252.chunk.js.map",
-    "static/js/3.3489d106.chunk.js": "/react-social-pet-project/static/js/3.3489d106.chunk.js",
-    "static/js/3.3489d106.chunk.js.map": "/react-social-pet-project/static/js/3.3489d106.chunk.js.map",
+    "main.js": "/react-social-pet-project/static/js/main.63b70da2.chunk.js",
+    "main.js.map": "/react-social-pet-project/static/js/main.63b70da2.chunk.js.map",
+    "runtime-main.js": "/react-social-pet-project/static/js/runtime-main.e23c4398.js",
+    "runtime-main.js.map": "/react-social-pet-project/static/js/runtime-main.e23c4398.js.map",
+    "static/js/2.ded4fef6.chunk.js": "/react-social-pet-project/static/js/2.ded4fef6.chunk.js",
+    "static/js/2.ded4fef6.chunk.js.map": "/react-social-pet-project/static/js/2.ded4fef6.chunk.js.map",
+    "static/js/3.9ddd9fa2.chunk.js": "/react-social-pet-project/static/js/3.9ddd9fa2.chunk.js",
+    "static/js/3.9ddd9fa2.chunk.js.map": "/react-social-pet-project/static/js/3.9ddd9fa2.chunk.js.map",
     "index.html": "/react-social-pet-project/index.html",
     "static/css/main.87073279.chunk.css.map": "/react-social-pet-project/static/css/main.87073279.chunk.css.map",
-    "static/js/2.dfa13252.chunk.js.LICENSE.txt": "/react-social-pet-project/static/js/2.dfa13252.chunk.js.LICENSE.txt",
+    "static/js/2.ded4fef6.chunk.js.LICENSE.txt": "/react-social-pet-project/static/js/2.ded4fef6.chunk.js.LICENSE.txt",
     "static/media/bg1.9fb8a056.jpg": "/react-social-pet-project/static/media/bg1.9fb8a056.jpg",
     "static/media/default_user_avatar.0c07a2e4.png": "/react-social-pet-project/static/media/default_user_avatar.0c07a2e4.png",
     "static/media/logo.b47aad27.png": "/react-social-pet-project/static/media/logo.b47aad27.png",
     "static/media/preloader.97d1be21.svg": "/react-social-pet-project/static/media/preloader.97d1be21.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0c628c5f.js",
-    "static/js/2.dfa13252.chunk.js",
+    "static/js/runtime-main.e23c4398.js",
+    "static/js/2.ded4fef6.chunk.js",
     "static/css/main.87073279.chunk.css",
-    "static/js/main.d9fe13e3.chunk.js"
+    "static/js/main.63b70da2.chunk.js"
   ]
 }
