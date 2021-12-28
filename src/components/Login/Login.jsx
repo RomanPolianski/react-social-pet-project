@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
 import { sendLoginData } from "../../redux/auth-reducer";
-import s from "./Login.module.css"; 
+import s from "./Login.module.css";
 
 const Login = (props) => {
   let onSubmit = (formData) => {
@@ -12,7 +12,9 @@ const Login = (props) => {
     <>
       <h1>Login</h1>
       <LoginFormRedux onSubmit={onSubmit} />
-      <p>Use to demo <b>login:</b> free@samuraijs.com <b>password:</b> free</p>
+      <p>
+        Use to demo <b>login:</b> free@samuraijs.com <b>password:</b> free
+      </p>
     </>
   );
 };
@@ -34,7 +36,9 @@ const LoginForm = (props) => {
         </div>
         <div className={s.field}>
           Remember me
-          <Field type={"checkbox"} name={"rememberMe"} component={"input"} />
+          <span className={s.checkbox}>
+            <Field type={"checkbox"} name={"rememberMe"} component={"input"} />
+          </span>
         </div>
         <div className={s.field}>
           <button>Login</button>
@@ -45,10 +49,8 @@ const LoginForm = (props) => {
 };
 
 let mapStateToProps = (state) => {
-      return {
-        
-      };
-    };
+  return {};
+};
 
 const LoginFormRedux = reduxForm({ form: "login" })(LoginForm);
 
