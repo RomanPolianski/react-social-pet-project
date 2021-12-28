@@ -18,3 +18,7 @@
 .app-wrapper-content {
     grid-area: c;
 }
+
+link {
+  color: black;
+}
